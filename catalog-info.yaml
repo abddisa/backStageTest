@@ -1,21 +1,12 @@
 ---
+# Add systems
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: examples
+  name: share-system
+  description: Manages shareholder-related data and APIs.
 spec:
-  owner: guests
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: example-website
-spec:
-  type: website
-  lifecycle: experimental
-  owner: guests
-  system: examples
-  providesApis: [example-grpc-api]
+  owner: team-a
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -29,6 +20,6 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  system: examples
+  system: share-system
   definition:
     $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
