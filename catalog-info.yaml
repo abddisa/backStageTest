@@ -1,15 +1,46 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: customer-service-api
-  description: Customer service API
+  name: share-holder-info-api
+  description: API to fetch all shareholder information.
   tags:
     - rest
     - springboot
+    - share
 spec:
   type: openapi
   lifecycle: production
   owner: team-a
+  system: share-system
   definition:
-    $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
-
+    $text: |
+      openapi: 3.0.0
+      info:
+        title: Share Holder Info API
+        version: 1.0.0
+        description: Endpoint to retrieve all shareholder information.
+      servers:
+        - url: http://localhost:8080
+      paths:
+        /api/share/shareHolderInfo/getAll:
+          get:
+            summary: Get all shareholder info
+            operationId: getAllShareHolders
+            tags:
+              - ShareHolder
+            responses:
+              '200':
+                description: A list of shareholder info
+                content:
+                  application/json:
+                    schema:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          shares:
+                            type: number
