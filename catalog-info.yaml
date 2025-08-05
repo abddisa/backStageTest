@@ -10,6 +10,6 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  system: share-system
+  system: examples
   definition:
     $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
