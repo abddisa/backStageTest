@@ -6,11 +6,10 @@ metadata:
   tags:
     - rest
     - springboot
-    - share
 spec:
   type: openapi
   lifecycle: production
   owner: team-a
   system: share-system
   definition:
-    $text: https://raw.githubusercontent.com/your-org/repo/main/openapi.yaml
+    $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
