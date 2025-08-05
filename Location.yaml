@@ -7,4 +7,3 @@ spec:
   targets:
     - https://raw.githubusercontent.com/your-org/repo/main/catalog/share-holder-info-api.yaml
     - https://raw.githubusercontent.com/your-org/repo/main/catalog/share-transfer-api.yaml
-    - https://raw.githubusercontent.com/your-org/repo/main/catalog/system.yaml
