@@ -1,0 +1,7 @@
+piVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: share-system
+  description: Manages all share-related APIs and services
+spec:
+  owner: team-a
