@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: my-api
+  description: My API for customer service
+  tags:
+    - rest
+    - springboot
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+  definition:
+    $text: https://raw.githubusercontent.com/my-org/my-repo/main/openapi.yaml
