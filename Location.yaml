@@ -6,5 +6,5 @@ spec:
   type: url
   targets:
     - https://github.com/abddisa/backStageTest/blob/main/share-holder-info-api.yaml
-    - https://github.com/abddisa/backStageTest/blob/main/share-holder-info-api.yaml
+    - https://github.com/abddisa/backStageTest/blob/main/share-transfer-api.yaml
     
