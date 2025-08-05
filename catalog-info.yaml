@@ -12,3 +12,12 @@ spec:
   owner: team-a
   definition:
     $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: team-a-location
+spec:
+  type: url
+  target: https://raw.githubusercontent.com/abddisa/backStageTest/main/team-a-group.yaml
