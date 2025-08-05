@@ -1,11 +1,30 @@
 openapi: 3.0.0
 info:
-  title: Sample API
+  title: Share Holder Info API
   version: 1.0.0
+  description: Endpoint to retrieve all shareholder information.
+servers:
+  - url: http://localhost:8080
 paths:
-  /hello:
+  /api/share/shareHolderInfo/getAll:
     get:
-      summary: Returns a greeting
+      summary: Get all shareholder info
+      operationId: getAllShareHolders
+      tags:
+        - ShareHolder
       responses:
         '200':
-          description: successful response
+          description: A list of shareholder info
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    shares:
+                      type: number
