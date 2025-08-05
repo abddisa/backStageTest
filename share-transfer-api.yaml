@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: share-transfer-api
+  description: API to transfer shares between holders.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+  system: share-system
+  definition:
+    $text: https://raw.githubusercontent.com/your-org/repo/main/share-transfer-openapi.yaml
