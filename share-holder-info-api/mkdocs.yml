@@ -1,10 +1,13 @@
-site_name: Share Holder Info API Docs
-
 nav:
- 
   - Usage: docs/usage.md
   - Getting Started: index.md
 
 plugins:
   - techdocs-core
 
+nav:
+  - Usage: docs/usage.md
+  - Getting Started: index.md
+
+plugins:
+  - techdocs-core
