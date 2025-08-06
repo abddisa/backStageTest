@@ -3,6 +3,12 @@ kind: API
 metadata:
   name: share-holder-info-api
   description: API to fetch all shareholder information.
+  tags:
+    - rest
+    - shareholder
+    - springboot
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: production
