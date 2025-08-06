@@ -11,7 +11,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
-  lifecycle: uat
+  lifecycle: production
   owner: team-a
   system: share-system
   definition:
