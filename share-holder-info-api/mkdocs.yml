@@ -1,18 +1,12 @@
 site_name: Share Holder Info API Docs
+docs_dir: docs  # Explicitly set docs directory
+site_dir: site  # Explicit output directory
 
 nav:
   - Home: index.md
-  # Remove usage.md reference since it doesn't exist
-  # Add other pages here as you create them
 
 plugins:
   - mkdocs-techdocs-core
 
 theme:
   name: material
-
-markdown_extensions:
-  - toc:
-      permalink: true
-  - tables
-  - fenced_code
