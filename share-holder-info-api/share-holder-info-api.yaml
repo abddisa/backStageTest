@@ -8,7 +8,7 @@ metadata:
     - share-system
     - springboot
   annotations:
-    backstage.io/techdocs-ref: github:https://github.com/abddisa/backStageTest/tree/main/
+    backstage.io/techdocs-ref: github:https://github.com/abddisa/backStageTest/tree/main/docs/share-holder-info-api
 spec:
   type: openapi
   lifecycle: production
