@@ -5,8 +5,7 @@ metadata:
   description: Manages all share-related APIs and services
 spec:
   owner: team-a
-
-  ---
+---
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
