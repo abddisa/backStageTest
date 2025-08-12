@@ -1,6 +1,6 @@
 site_name: Share Holder Info API Docs
-docs_dir: docs  # Explicitly set docs directory
-site_dir: site  # Explicit output directory
+docs_dir: docs
+site_dir: site
 
 nav:
   - Home: index.md
