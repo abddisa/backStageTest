@@ -4,12 +4,10 @@ site_dir: site
 
 plugins:
   - techdocs-core  # Required for Backstage TechDocs
+  - mkdocs-techdocs-core  # Also required (merged into one list)
 
 nav:
   - Home: index.md
-
-plugins:
-  - mkdocs-techdocs-core
 
 theme:
   name: material
