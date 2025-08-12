@@ -9,7 +9,7 @@ metadata:
     - springboot
   annotations:
     # Use the repo git URL (no /tree/main HTML path)
-    backstage.io/source-location: url: https://github.com/abddisa/backStageTest.git
+    backstage.io/source-location: "url:https://github.com/abddisa/backStageTest/tree/main/share-holder-info-api"
     # Point to the folder that contains mkdocs.yml + docs/
     backstage.io/techdocs-ref: dir: share-holder-info-api
 spec:
