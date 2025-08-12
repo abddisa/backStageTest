@@ -12,7 +12,7 @@ metadata:
   name: ldap-auth-system
   description: LDAP authentication and user provisioning system
 spec:
-  owner: platform-team
+  owner: system-development-team
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -28,4 +28,4 @@ metadata:
     - middleware
     - platform
 spec:
-  owner: platform-team
+  owner: system-development-team
