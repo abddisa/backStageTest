@@ -13,3 +13,19 @@ metadata:
   description: LDAP authentication and user provisioning system
 spec:
   owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: middleware-system
+  title: Middleware System
+  description: >
+    A centralized service layer responsible for handling communication, data transformation,
+    and integration between different applications or microservices.
+    It ensures smooth data flow, protocol translation, and secure message exchange.
+  tags:
+    - integration
+    - middleware
+    - platform
+spec:
+  owner: platform-team
