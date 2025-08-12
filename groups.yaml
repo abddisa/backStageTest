@@ -1,0 +1,12 @@
+# catalog/groups.yaml
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-b
+  description: Team b - Frontend Developers
+spec:
+  type: team
+  children: []
+  members:
+    - user:default/alice
+    - user:default/bob
