@@ -8,7 +8,7 @@ metadata:
     - share-system
     - springboot
   annotations:
-    backstage.io/source-location: "url:https://github.com/abddisa/backStageTest.git"
+    backstage.io/source-location: "url:https://github.com/abddisa/backStageTest/tree/main/share-holder-info-api"
     backstage.io/techdocs-ref: "dir:share-holder-info-api"
 spec:
   type: openapi
