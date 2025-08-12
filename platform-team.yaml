@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: system-development-team
+  title: System Development Team
+  description: >
+    Responsible for designing, developing, and maintaining software systems
+    and services. This team ensures system scalability, performance,
+    and integration across the organization.
+spec:
+  type: team
+  profile:
+    displayName: System Development Team
+    email: system.dev@example.com
+    picture: https://avatars.githubusercontent.com/u/9919?s=200&v=4
+  children: []
+  members:
+    - alice-smith
+    - bob-johnson
