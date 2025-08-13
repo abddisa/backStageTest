@@ -90,7 +90,8 @@ Accept: application/json
   "updatedAt": "2025-08-12T18:40:03Z"
 }
 
-### Errors
+
+###Failure
 404 if not found
 410 if the account is closed and purged from lookup
 
