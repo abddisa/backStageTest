@@ -7,3 +7,4 @@ spec:
   targets:
     - https://raw.githubusercontent.com/abddisa/backStageTest/main/share-holder-info-api/share-holder-info-api.yaml
     - https://raw.githubusercontent.com/abddisa/backStageTest/main/share-transfer-api.yaml
+    - https://github.com/abddisa/backStageTest/blob/main/Middleware_System/AccountInq/AccountInq.yaml
