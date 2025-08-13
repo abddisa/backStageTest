@@ -1,6 +1,6 @@
 # Account Inquiry API
 
-**Owner:** Platform Team  
+**Owner:** Bunna Bank System development Team  
 **System:** Middleware System  
 **Status:** Production  
 **Last Updated:** 2025-08-13
