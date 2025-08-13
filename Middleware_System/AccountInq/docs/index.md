@@ -68,3 +68,28 @@ Represents a bank account and its public metadata.
 Fetch a single account by internal `accountId`.
 
 **Request**
+GET /accounts/2b3c9a9f-7a0a-4f1a-a5ab-9b6f9b2b1720
+Authorization: Bearer <token>
+Accept: application/json
+
+
+**Response — 200**
+```json
+{
+  "accountId": "2b3c9a9f-7a0a-4f1a-a5ab-9b6f9b2b1720",
+  "foracid": "0012345678901",
+  "cifId": "CIF123456",
+  "accountName": "AB***A K***",
+  "productCode": "SBA",
+  "branchCode": "1001",
+  "currency": "ETB",
+  "balance": 15420.75,
+  "availableBalance": 15000.25,
+  "status": "ACTIVE",
+  "openedAt": "2023-05-22T10:15:30Z",
+  "updatedAt": "2025-08-12T18:40:03Z"
+}
+
+**Errors**
+404 if not found
+410 if the account is closed and purged from lookup
