@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: acc-inq-api
+  description: API to fetch account Info
+  tags:
+    - rest
+    - account Inq
+    - springboot
+  annotations:
+    backstage.io/source-location: "url:https://github.com/abddisa/backStageTest/tree/main/share-holder-info-api"
+    backstage.io/techdocs-ref: "dir:share-holder-info-api"
+spec:
+  type: openapi
+  lifecycle: uat
+  owner: group:default/team-b
+  system: share-system
+  definition:
+    $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
