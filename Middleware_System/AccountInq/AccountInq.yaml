@@ -5,7 +5,7 @@ metadata:
   description: API to fetch account Info
   tags:
     - rest
-    - share-system
+    - Middleware-System
     - springboot
   annotations:
     backstage.io/source-location: "url:https://github.com/abddisa/backStageTest/tree/main/Middleware_System/AccountInq"
@@ -14,6 +14,6 @@ spec:
   type: openapi
   lifecycle: uat
   owner: group:default/team-b
-  system: share-system
+  system: Middleware System
   definition:
     $text: https://raw.githubusercontent.com/abddisa/backStageTest/main/openapi.yaml
