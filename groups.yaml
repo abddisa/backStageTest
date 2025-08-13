@@ -10,3 +10,15 @@ spec:
   members:
     - user:default/alice
     - user:default/bob
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: system-development-team
+  description: Development team responsible for system services
+spec:
+  type: team
+  profile:
+    displayName: System Development Team
+    email: sysdev@example.com
+  children: []  # or list of user/group names
