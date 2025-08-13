@@ -90,6 +90,17 @@ Accept: application/json
   "updatedAt": "2025-08-12T18:40:03Z"
 }
 
-**Errors**
+### Errors
 404 if not found
 410 if the account is closed and purged from lookup
+
+### GET /accounts
+Search or fetch by business keys.
+Query Parameters
+| Name      | Type    | Required | Description                             |         |         |           |
+| --------- | ------- | -------- | --------------------------------------- | ------- | ------- | --------- |
+| `foracid` | string  | no       | Exact core account number.              |         |         |           |
+| `cifId`   | string  | no       | Customer identifier (returns multiple). |         |         |           |
+| `status`  | string  | no       | Filter by \`ACTIVE                      | BLOCKED | DORMANT | CLOSED\`. |
+| `limit`   | integer | no       | Default `50`, max `200`.                |         |         |           |
+| `cursor`  | string  | no       | Opaque cursor for pagination.           |         |         |           |
