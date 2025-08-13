@@ -9,8 +9,6 @@ description: Retrieve account information including balances, details, and custo
 
 The Account Inquiry API provides secure, programmatic access to account information for authorized applications. This RESTful API enables developers to retrieve account details, balances, and customer-account relationships while maintaining strict security and compliance standards.
 
-![API Flow Diagram](https://example.com/images/account-inquiry-flow.png)
-
 ## Getting Started
 
 ### Prerequisites
@@ -31,4 +29,46 @@ GET /accounts/{accountId}
 Authorization: Bearer {access_token}
 X-Client-ID: your_client_id
 
+### Response
+Status: 200 OK
+{
+  "accountId": "string",
+  "accountType": "string",
+  "accountSubType": "string",
+  "accountName": "string",
+  "status": "string",
+  "openedDate": "date",
+  "currency": "string",
+  "balances": {
+    "current": "number",
+    "available": "number",
+    "hold": "number"
+  },
+  "routingNumber": "string",
+  "maskedAccountNumber": "string",
+  "owners": [
+    {
+      "customerId": "string",
+      "name": "string",
+      "relationship": "string"
+    }
+  ],
+  "metadata": {
+    "lastTransactionDate": "datetime",
+    "lastUpdated": "datetime"
+  }
+}
+
+### Field Descriptions:
+### Field Descriptions
+
+| Field                     | Type     | Description                          | Required | Values/Format           | Example                  |
+|---------------------------|----------|--------------------------------------|----------|-------------------------|--------------------------|
+| `accountId`               | string   | Unique account identifier            | Yes      | 5-20 alphanumeric chars | "acct_67890"             |
+| `accountType`             | string   | Primary classification               | Yes      | `CHECKING`, `SAVINGS`   | "SAVINGS"                |
+| `currentBalance`          | number   | Ledger balance (USD)                 | No       | Decimal (2 places)      | 4523.78                  |
+| `openedDate`              | string   | Account opening date                 | No       | YYYY-MM-DD              | "2023-01-15"             |
+| `status`                  | string   | Current account state                | Yes      | `ACTIVE`, `CLOSED`      | "ACTIVE"                 |
+| `owners[].relationship`   | string   | Customer's relationship to account   | No       | `PRIMARY`, `SECONDARY`  | "PRIMARY"                |
+| `lastUpdated`             | string   | Timestamp of last update             | No       | ISO 8601 format         | "2023-06-25T08:15:42Z"   |
 
