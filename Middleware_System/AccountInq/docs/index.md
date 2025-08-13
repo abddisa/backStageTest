@@ -1,74 +1,70 @@
----
-title: Account Inquiry API
-description: Retrieve account information including balances, details, and customer relationships
----
-
 # Account Inquiry API
 
-## Overview
+**Owner:** Platform Team  
+**System:** Middleware System  
+**Status:** Production  
+**Last Updated:** 2025-08-13
 
-The Account Inquiry API provides secure, programmatic access to account information for authorized applications. This RESTful API enables developers to retrieve account details, balances, and customer-account relationships while maintaining strict security and compliance standards.
+The Account Inquiry API lets internal services fetch account metadata, balances, and status in real time. It is read-only and optimized for low-latency lookups.
 
-## Getting Started
+> If you are new to TechDocs, see the project’s `mkdocs.yml` and `catalog-info.yaml` examples in the repo root.
 
-### Prerequisites
-- Valid API credentials (client ID and secret)
-- OAuth 2.0 implementation
-- Whitelisted IP addresses (for production access)
+---
 
-### Sandbox Environment
-```text
-Base URL: https://api.sandbox.yourcompany.com/account/v1
-Test Customer ID: cust_12345
-Test Account ID: acct_67890
+## Base URL
 
-### Authentication
-All endpoints require Bearer Token authentication:
+- **Prod:** `https://api.example.com/accounts`  
+- **Staging:** `https://staging-api.example.com/accounts`
 
-GET /accounts/{accountId}
-Authorization: Bearer {access_token}
-X-Client-ID: your_client_id
+> Replace `example.com` with your org domain.
 
-### Response
-Status: 200 OK
-{
-  "accountId": "string",
-  "accountType": "string",
-  "accountSubType": "string",
-  "accountName": "string",
-  "status": "string",
-  "openedDate": "date",
-  "currency": "string",
-  "balances": {
-    "current": "number",
-    "available": "number",
-    "hold": "number"
-  },
-  "routingNumber": "string",
-  "maskedAccountNumber": "string",
-  "owners": [
-    {
-      "customerId": "string",
-      "name": "string",
-      "relationship": "string"
-    }
-  ],
-  "metadata": {
-    "lastTransactionDate": "datetime",
-    "lastUpdated": "datetime"
-  }
-}
+## Authentication & Authorization
 
-### Field Descriptions:
-### Field Descriptions
+- **Auth:** OAuth 2.0 Client Credentials (preferred) or mutual TLS (mTLS)
+- **Scopes:** `accounts:read`
+- **Headers:**
+  - `Authorization: Bearer <access_token>`
+  - `X-Correlation-Id: <uuid>` *(optional but recommended)*
 
-| Field                     | Type     | Description                          | Required | Values/Format           | Example                  |
-|---------------------------|----------|--------------------------------------|----------|-------------------------|--------------------------|
-| `accountId`               | string   | Unique account identifier            | Yes      | 5-20 alphanumeric chars | "acct_67890"             |
-| `accountType`             | string   | Primary classification               | Yes      | `CHECKING`, `SAVINGS`   | "SAVINGS"                |
-| `currentBalance`          | number   | Ledger balance (USD)                 | No       | Decimal (2 places)      | 4523.78                  |
-| `openedDate`              | string   | Account opening date                 | No       | YYYY-MM-DD              | "2023-01-15"             |
-| `status`                  | string   | Current account state                | Yes      | `ACTIVE`, `CLOSED`      | "ACTIVE"                 |
-| `owners[].relationship`   | string   | Customer's relationship to account   | No       | `PRIMARY`, `SECONDARY`  | "PRIMARY"                |
-| `lastUpdated`             | string   | Timestamp of last update             | No       | ISO 8601 format         | "2023-06-25T08:15:42Z"   |
+401 for invalid/expired tokens, 403 if token lacks `accounts:read`.
 
+## Idempotency & Caching
+
+- **GET** operations are safe and cacheable.
+- Clients may cache **200 OK** responses for up to **30s** unless `Cache-Control` states otherwise.
+
+## Rate Limits
+
+- Default: **600 requests / minute** per client.  
+- `429 Too Many Requests` when exceeded. Back off with exponential jitter.
+
+---
+
+## Resources
+
+### Account
+Represents a bank account and its public metadata.
+
+| Field | Type | Description |
+|---|---|---|
+| `accountId` | string | Internal UUID for the account. |
+| `foracid` | string | Core banking account number. |
+| `cifId` | string | Customer identifier. |
+| `accountName` | string | Account holder name (masked when required). |
+| `productCode` | string | Product or scheme code (e.g., `SBA`, `CAA`). |
+| `branchCode` | string | Branch/sol id. |
+| `currency` | string | ISO 4217 code (e.g., `ETB`, `USD`). |
+| `balance` | number | Ledger balance. |
+| `availableBalance` | number | Available balance. |
+| `status` | string | `ACTIVE`, `BLOCKED`, `DORMANT`, `CLOSED`. |
+| `openedAt` | string | ISO 8601 timestamp. |
+| `updatedAt` | string | ISO 8601 timestamp. |
+
+---
+
+## Endpoints
+
+### GET `/accounts/{accountId}`
+Fetch a single account by internal `accountId`.
+
+**Request**
