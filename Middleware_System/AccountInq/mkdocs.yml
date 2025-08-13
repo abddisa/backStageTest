@@ -1,0 +1,12 @@
+site_name: Account Inq Api Docs
+docs_dir: docs
+site_dir: site
+
+plugins:
+  - techdocs-core  # Required for Backstage TechDocs
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
