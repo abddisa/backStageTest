@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://localhost:8083
 paths:
-  /api/account/cardReq/getCardList?accountNumber=2439501000599:
+  /api/account/cardReq/getCardList?accountNumber=1049501003248:
     get:
       summary: Get all shareholder info
       operationId: getAllShareHolders
