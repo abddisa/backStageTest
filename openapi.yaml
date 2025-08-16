@@ -2,7 +2,7 @@ openapi: 3.0.1
 servers:
   - url: https://api.spotify.com/v1
 info:
-  title: Spotify Web API
+  title: Bunna Bank API
   version: 2021.4.2
   x-apisguru-categories:
     - media
@@ -12,7 +12,7 @@ info:
     - format: openapi
       url: https://raw.githubusercontent.com/sonallux/spotify-web-api/master/spotify-web-api-generator-open-api/spotify-web-api-openapi.yml
       version: "3.0"
-  x-providerName: spotify.com
+  x-providerName: bunnabank.com
   x-unofficialSpec: true
 externalDocs:
   description: Find more info on the official Spotify Web API Reference
