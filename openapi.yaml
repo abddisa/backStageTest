@@ -213,6 +213,52 @@ components:
           description: The Spotify URI for the album.
           type: string
       type: object
+    AlbumsObject:
+      properties:
+        albums:
+          description: ""
+          items:
+            $ref: "#/components/schemas/AlbumObject"
+          type: array
+      type: object
+    ArtistObject:
+      externalDocs:
+        description: Find more info on the official Spotify Web API Reference
+        url: https://developer.spotify.com/documentation/web-api/reference/#object-artistobject
+      properties:
+        genres:
+          description: 'A list of the genres the artist is associated with. For example:
+            `"Prog Rock"` , `"Post-Grunge"`. (If not yet classified, the array
+            is empty.)'
+          items:
+            type: string
+          type: array
+        href:
+          description: A link to the Web API endpoint providing full details of the artist.
+          type: string
+        id:
+          description: The [Spotify
+            ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids)
+            for the artist.
+          type: string
+        name:
+          description: The name of the artist.
+          type: string
+        popularity:
+          description: The popularity of the artist. The value will be between 0 and 100,
+            with 100 being the most popular. The artist's popularity is
+            calculated from the popularity of all the artist's tracks.
+          format: int32
+          type: integer
+        type:
+          description: 'The object type: `"artist"`'
+          type: string
+        uri:
+          description: The [Spotify
+            URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids)
+            for the artist.
+          type: string
+      type: object
 
   securitySchemes:
     bunnabank_auth:
