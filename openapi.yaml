@@ -1,6 +1,6 @@
 openapi: 3.0.1
 servers:
-  - url: https://api.spotify.com/v1
+  - url: https://api.bunnabank.com/v1
 info:
   title: Bunna Bank API
   version: 2021.4.2
@@ -28,7 +28,7 @@ tags:
 paths:
   /accounts:
     get:
-      description: Get List of Accounts by Phone number Customer Phone Number.
+      description: Get List of customer Accounts by Phone number. Retrieves a list of customer bank accounts that are registered with a given phone number.
       externalDocs:
         description: Find more info on the official Spotify Web API Reference
         url: https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-multiple-albums
@@ -40,21 +40,10 @@ paths:
           required: true
           schema:
             type: string
-        - description: "A comma-separated list of the [Spotify
-            IDs](https://developer.spotify.com/documentation/web-api/#spotify-u\
-            ris-and-ids) for the albums. Maximum: 20 IDs."
+        - description: "The phone number must be starting with +251 (Ethiopia country code), (e.g., +2510912345678)"
           in: query
-          name: ids
+          name: phoneNumber
           required: true
-          schema:
-            type: string
-        - description: An [ISO 3166-1 alpha-2 country
-            code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or the string
-            from_token. Provide this parameter if you want to apply [Track
-            Relinking](https://developer.spotify.com/documentation/general/guides/track-relinking-guide/).
-          in: query
-          name: market
-          required: false
           schema:
             type: string
       responses:
