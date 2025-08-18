@@ -26,10 +26,9 @@ tags:
  
 
 paths:
-  /albums:
+  /accounts:
     get:
-      description: Get Spotify catalog information for multiple albums identified by
-        their Spotify IDs.
+      description: Get List of Accounts by Phone number Customer Phone Number.
       externalDocs:
         description: Find more info on the official Spotify Web API Reference
         url: https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-multiple-albums
@@ -77,13 +76,13 @@ paths:
           $ref: "#/components/responses/ErrorResponse"
       security:
         - spotify_auth: []
-      summary: Get Multiple Albums
+      summary: Get List of account
       tags:
-        - category-albums
+        - customer-detail
         
-  "/albums/{id}":
+  "/account/{phoneNo}":
     get:
-      description: Get Spotify catalog information for a single album.
+      description: Get account Detail by phone number.
       externalDocs:
         description: Find more info on the official Spotify Web API Reference
         url: https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-an-album
@@ -121,9 +120,9 @@ paths:
           $ref: "#/components/responses/ErrorResponse"
       security:
         - spotify_auth: []
-      summary: Get an Album
+      summary: Get Account Detial
       tags:
-        - category-albums
+        - customer-detail
 		
   
 		
