@@ -265,19 +265,6 @@ components:
         error:
           $ref: "#/components/schemas/ErrorObject"
       type: object
-    ExplicitContentSettingsObject:
-      externalDocs:
-        description: Find more info on the official Spotify Web API Reference
-        url: https://developer.spotify.com/documentation/web-api/reference/#object-explicitcontentsettingsobject
-      properties:
-        filter_enabled:
-          description: When `true`, indicates that explicit content should not be played.
-          type: boolean
-        filter_locked:
-          description: When `true`, indicates that the explicit content setting is locked
-            and can't be changed by the user.
-          type: boolean
-      type: object
 
     ErrorObject:
       externalDocs:
