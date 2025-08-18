@@ -18,11 +18,11 @@ externalDocs:
   description: Find more info on the official Spotify Web API Reference
   url: https://developer.spotify.com/documentation/web-api/reference
 tags:
-  - description: Albums API
+  - description: customer API
     externalDocs:
-      description: Find more info on the official Spotify Web API Reference
+      description: Find more info on the official Bunna Bank Web API Reference
       url: https://developer.spotify.com/documentation/web-api/reference/#category-albums
-    name: category-albums
+    name: customer-detail
  
 
 paths:
