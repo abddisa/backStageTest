@@ -142,15 +142,6 @@ components:
           items:
             type: string
           type: array
-        copyrights:
-          description: The copyright statements of the album.
-          items:
-            $ref: "#/components/schemas/CopyrightObject"
-          type: array
-        external_ids:
-          $ref: "#/components/schemas/ExternalIdObject"
-        external_urls:
-          $ref: "#/components/schemas/ExternalUrlObject"
         genres:
           description: 'A list of the genres used to classify the album. For example:
             "Prog Rock" , "Post-Grunge". (If not yet classified, the array is
@@ -164,11 +155,6 @@ components:
         id:
           description: The Spotify ID for the album.
           type: string
-        images:
-          description: The cover art for the album in various sizes, widest first.
-          items:
-            $ref: "#/components/schemas/ImageObject"
-          type: array
         label:
           description: The label for the album.
           type: string
@@ -203,11 +189,6 @@ components:
               description: A link to the Web API endpoint returning the full result of the
                 request
               type: string
-            items:
-              description: The requested data.
-              items:
-                $ref: "#/components/schemas/SimplifiedTrackObject"
-              type: array
             limit:
               description: The maximum number of items in the response (as set in the query or
                 by default).
