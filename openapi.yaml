@@ -2634,7 +2634,6 @@ components:
             accounts-read-by-phone: Read list of user’s bank accounts (account numbers, IBANs, balances).
             accounts-read-by-phone-list: Read list of user’s bank accounts (account numbers, IBANs, balances).
             balances-read-by-phone: Read transactions for user’s accounts.
-            playlist-modify-public: Write access to a user's public playlists.
-           
+            playlist-modify-public: Write access to a user's public playlists.           
           tokenUrl: https://accounts.spotify.com/api/token
       type: oauth2
