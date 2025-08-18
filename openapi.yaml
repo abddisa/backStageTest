@@ -260,6 +260,47 @@ components:
           type: string
       type: object
 
+    ErrorResponseObject:
+      properties:
+        error:
+          $ref: "#/components/schemas/ErrorObject"
+      type: object
+    ExplicitContentSettingsObject:
+      externalDocs:
+        description: Find more info on the official Spotify Web API Reference
+        url: https://developer.spotify.com/documentation/web-api/reference/#object-explicitcontentsettingsobject
+      properties:
+        filter_enabled:
+          description: When `true`, indicates that explicit content should not be played.
+          type: boolean
+        filter_locked:
+          description: When `true`, indicates that the explicit content setting is locked
+            and can't be changed by the user.
+          type: boolean
+      type: object
+
+    ErrorObject:
+      externalDocs:
+        description: Find more info on the official Spotify Web API Reference
+        url: https://developer.spotify.com/documentation/web-api/reference/#object-errorobject
+      properties:
+        message:
+          description: A short description of the cause of the error.
+          type: string
+        status:
+          description: The HTTP status code (also returned in the response header; see
+            [Response Status
+            Codes](https://developer.spotify.com/documentation/web-api/#response-status-codes)
+            for more information).
+          format: int32
+          type: integer
+      type: object
+    ErrorResponseObject:
+      properties:
+        error:
+          $ref: "#/components/schemas/ErrorObject"
+      type: object
+
   securitySchemes:
     bunnabank_auth:
       flows:
