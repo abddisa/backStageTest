@@ -110,8 +110,7 @@ paths:
       summary: Get Account Detial
       tags:
         - customer-detail
-		
-	
+
 components:
   responses:
     ErrorResponse:
@@ -237,128 +236,7 @@ components:
           description: The Spotify URI for the album.
           type: string
       type: object
-    AlbumRestrictionObject:
-      externalDocs:
-        description: Find more info on the official Spotify Web API Reference
-        url: https://developer.spotify.com/documentation/web-api/reference/#object-albumrestrictionobject
-      properties:
-        reason:
-          description: >-
-            The reason for the restriction. Supported values:  
 
-
-            - `market` - The content item is not available in the given market.  
-
-            - `product` - The content item is not available for the user's subscription type.  
-
-            - `explicit` - The content item is explicit and the user's account is set to not play explicit content.  
-              Additional reasons may be added in the future. **Note**: If you use this field, make sure that your application safely handles unknown values.
-          type: string
-      type: object
-    AlbumsObject:
-      properties:
-        albums:
-          description: ""
-          items:
-            $ref: "#/components/schemas/AlbumObject"
-          type: array
-      type: object
-    ArtistObject:
-      externalDocs:
-        description: Find more info on the official Spotify Web API Reference
-        url: https://developer.spotify.com/documentation/web-api/reference/#object-artistobject
-      properties:
-        external_urls:
-          $ref: "#/components/schemas/ExternalUrlObject"
-        followers:
-          $ref: "#/components/schemas/FollowersObject"
-        genres:
-          description: 'A list of the genres the artist is associated with. For example:
-            `"Prog Rock"` , `"Post-Grunge"`. (If not yet classified, the array
-            is empty.)'
-          items:
-            type: string
-          type: array
-        href:
-          description: A link to the Web API endpoint providing full details of the artist.
-          type: string
-        id:
-          description: The [Spotify
-            ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids)
-            for the artist.
-          type: string
-        images:
-          description: Images of the artist in various sizes, widest first.
-          items:
-            $ref: "#/components/schemas/ImageObject"
-          type: array
-        name:
-          description: The name of the artist.
-          type: string
-        popularity:
-          description: The popularity of the artist. The value will be between 0 and 100,
-            with 100 being the most popular. The artist's popularity is
-            calculated from the popularity of all the artist's tracks.
-          format: int32
-          type: integer
-        type:
-          description: 'The object type: `"artist"`'
-          type: string
-        uri:
-          description: The [Spotify
-            URI](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids)
-            for the artist.
-          type: string
-      type: object
-    ArtistsObject:
-      properties:
-        artists:
-          description: ""
-          items:
-            $ref: "#/components/schemas/ArtistObject"
-          type: array
-      type: object
-    AudioAnalysisObject:
-      externalDocs:
-        description: Find more info on the official Spotify Web API Reference
-        url: https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/#audio-analysis-object
-      properties:
-        bars:
-          description: The time intervals of the bars throughout the track. A bar (or
-            measure) is a segment of time defined as a given number of beats.
-            Bar offsets also indicate downbeats, the first beat of the measure.
-          items:
-            $ref: "#/components/schemas/TimeIntervalObject"
-          type: array
-        beats:
-          description: The time intervals of beats throughout the track. A beat is the
-            basic time unit of a piece of music; for example, each tick of a
-            metronome. Beats are typically multiples of tatums.
-          items:
-            $ref: "#/components/schemas/TimeIntervalObject"
-          type: array
-        sections:
-          description: Sections are defined by large variations in rhythm or timbre, e.g.
-            chorus, verse, bridge, guitar solo, etc. Each section contains its
-            own descriptions of tempo, key, mode, time_signature, and loudness.
-          items:
-            $ref: "#/components/schemas/SectionObject"
-          type: array
-        segments:
-          description: Audio segments attempts to subdivide a song into many segments,
-            with each segment containing a roughly consistent sound throughout
-            its duration.
-          items:
-            $ref: "#/components/schemas/SegmentObject"
-          type: array
-        tatums:
-          description: A tatum represents the lowest regular pulse train that a listener
-            intuitively infers from the timing of perceived musical events
-            (segments).
-          items:
-            $ref: "#/components/schemas/TimeIntervalObject"
-          type: array
-      type: object
   securitySchemes:
     bunnabank_auth:
       flows:
