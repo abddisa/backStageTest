@@ -2624,8 +2624,7 @@ components:
             (e.g. happy, cheerful, euphoric), while tracks with low valence
             sound more negative (e.g. sad, depressed, angry).
           type: number
-      type: object
-	  
+      type: object	  
   securitySchemes:
     spotify_auth:
       flows:
@@ -2633,7 +2632,6 @@ components:
           authorizationUrl: https://accounts.spotify.com/authorize
           scopes:
             accounts-read-by-phone: Read list of user’s bank accounts (account numbers, IBANs, balances).
-			accounts-read-by-account: Read list of user’s bank accounts (account numbers, IBANs, balances).
             accounts-read-by-phone-list: Read list of user’s bank accounts (account numbers, IBANs, balances).
             balances-read-by-phone: Read transactions for user’s accounts.
             playlist-modify-public: Write access to a user's public playlists.
