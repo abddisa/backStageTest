@@ -75,7 +75,7 @@ paths:
         default:
           $ref: "#/components/responses/ErrorResponse"
       security:
-        - spotify_auth: []
+        - bunnabank_auth: []
       summary: Get List of account
       tags:
         - customer-detail
@@ -119,7 +119,7 @@ paths:
         default:
           $ref: "#/components/responses/ErrorResponse"
       security:
-        - spotify_auth: []
+        - bunnabank_auth: []
       summary: Get Account Detial
       tags:
         - customer-detail
@@ -2393,7 +2393,7 @@ components:
           type: string
       type: object
   securitySchemes:
-    spotify_auth:
+    bunnabank_auth:
       flows:
         authorizationCode:
           authorizationUrl: https://accounts.bunnabank.com/authorize
