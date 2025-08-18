@@ -295,11 +295,6 @@ components:
           format: int32
           type: integer
       type: object
-    ErrorResponseObject:
-      properties:
-        error:
-          $ref: "#/components/schemas/ErrorObject"
-      type: object
 
   securitySchemes:
     bunnabank_auth:
