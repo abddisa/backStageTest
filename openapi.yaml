@@ -124,8 +124,7 @@ paths:
       tags:
         - customer-detail
 		
-  
-		
+	
 components:
   responses:
     ErrorResponse:
