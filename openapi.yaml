@@ -231,5 +231,5 @@ components:
             accounts-read-by-phone: Read list of user’s bank accounts (account numbers, balances).
             accounts-read-by-phone-list: Read list of user’s bank accounts (account numbers, balances).
             balances-read-by-phone: Read transactions for user’s accounts.   
-          tokenUrl: hhttp://localhost:8083/api/token
+          tokenUrl: http://localhost:8083/oauth/token
       type: oauth2
