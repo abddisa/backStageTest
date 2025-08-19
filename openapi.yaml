@@ -226,10 +226,10 @@ components:
     bunnabank_auth:
       flows:
         authorizationCode:
-          authorizationUrl: https://accounts.bunnabank.com/authorize
+          authorizationUrl: http://localhost:8083/api/authorize
           scopes:
-            accounts-read-by-phone: Read list of user’s bank accounts (account numbers, IBANs, balances).
-            accounts-read-by-phone-list: Read list of user’s bank accounts (account numbers, IBANs, balances).
+            accounts-read-by-phone: Read list of user’s bank accounts (account numbers, balances).
+            accounts-read-by-phone-list: Read list of user’s bank accounts (account numbers, balances).
             balances-read-by-phone: Read transactions for user’s accounts.   
-          tokenUrl: https://accounts.bunnabank.com/api/token
+          tokenUrl: hhttp://localhost:8083/api/token
       type: oauth2
