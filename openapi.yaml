@@ -1,0 +1,159 @@
+openapi: 3.0.1
+info:
+  title: Bunna Bank API
+  description: >
+    Secure APIs for accessing Bunna Bank customer accounts and balances.
+    All endpoints are protected with OAuth2 Authorization Code flow.
+  version: 1.0.0
+  x-providerName: bunnabank.com
+  x-logo:
+    url: https://your-bank-domain.com/logo.png
+
+servers:
+  - url: https://api.bunnabank.com/v1
+
+tags:
+  - name: accounts
+    description: Customer Accounts API
+
+paths:
+  /accounts:
+    get:
+      summary: Get list of accounts by phone number
+      description: >
+        Fetch all customer accounts linked to a phone number.  
+        Useful for customers to view and select accounts before making transactions.
+      operationId: getAccountsByPhoneNumber
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          description: A valid OAuth2 access token.
+          schema:
+            type: string
+        - in: query
+          name: phoneNumber
+          required: true
+          description: Customer’s phone number (e.g., +251932245515).
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful account lookup
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountsObject"
+        "401":
+          description: Unauthorized (invalid or missing token)
+        "404":
+          description: No accounts found for given phone number
+        default:
+          $ref: "#/components/responses/ErrorResponse"
+      security:
+        - bunnabank_auth: [accounts.read]
+      tags:
+        - accounts
+
+  /account/{phoneNo}:
+    get:
+      summary: Get account detail by phone number
+      description: >
+        Retrieve detailed information for a specific account identified by phone number.
+      operationId: getAccountDetail
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          description: A valid OAuth2 access token.
+          schema:
+            type: string
+        - in: path
+          name: phoneNo
+          required: true
+          description: The customer’s phone number.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Account detail response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountObject"
+        "401":
+          description: Unauthorized (invalid or missing token)
+        "404":
+          description: Account not found
+        default:
+          $ref: "#/components/responses/ErrorResponse"
+      security:
+        - bunnabank_auth: [accounts.read]
+      tags:
+        - accounts
+
+components:
+  responses:
+    ErrorResponse:
+      description: Unexpected error response
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponseObject"
+
+  schemas:
+    AccountObject:
+      type: object
+      properties:
+        account_number:
+          type: string
+          description: Unique account number
+        account_name:
+          type: string
+          description: Name of the account holder
+        balance:
+          type: number
+          format: double
+          description: Current account balance
+        currency:
+          type: string
+          description: Account currency (e.g., ETB, USD)
+        status:
+          type: string
+          description: Current status of the account (active, closed, etc.)
+
+    AccountsObject:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: "#/components/schemas/AccountObject"
+
+    ErrorResponseObject:
+      type: object
+      properties:
+        error:
+          $ref: "#/components/schemas/ErrorObject"
+
+    ErrorObject:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A short description of the error
+        status:
+          type: integer
+          format: int32
+          description: HTTP status code
+
+  securitySchemes:
+    bunnabank_auth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: http://localhost:8083/oauth/authorize
+          tokenUrl: http://localhost:8083/oauth/token
+          scopes:
+            accounts.read: Read user’s bank accounts
+            balances.read: Read account balances
